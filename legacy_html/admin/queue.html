@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Queue — Lotoks Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="bg-surface-low">
+
+<aside class="sidebar" id="sidebar">
+    <div class="mb-5">
+        <a class="navbar-brand text-white fs-3" href="../index.html">Lotoks<span class="text-tertiary">.</span></a>
+        <div class="badge badge-warning x-small d-block mt-2">Admin Portal</div>
+    </div>
+    <nav class="d-flex flex-column gap-2">
+        <a href="queue.html" class="sidebar-link active"><i class="fa-solid fa-list-check"></i> Queue</a>
+        <a href="listings.html" class="sidebar-link"><i class="fa-solid fa-briefcase"></i> Listings</a>
+        <a href="payments.html" class="sidebar-link"><i class="fa-solid fa-credit-card"></i> Payments</a>
+        <a href="staff.html" class="sidebar-link"><i class="fa-solid fa-users"></i> Staff</a>
+        <a href="config.html" class="sidebar-link mt-auto"><i class="fa-solid fa-gear"></i> System Config</a>
+        <a href="languages.html" class="sidebar-link"><i class="fa-solid fa-language"></i> i18n</a>
+        <a href="../index.html" class="sidebar-link border-0 bg-transparent text-start w-100"><i class="fa-solid fa-sign-out"></i> Logout</a>
+    </nav>
+</aside>
+
+<main class="main-content">
+    <header class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h2 class="mb-1">Application Queue</h2>
+            <p class="text-muted small">Manage and review incoming sponsorship requests.</p>
+        </div>
+        <div class="d-flex gap-2">
+            <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-download me-1"></i> Export CSV</button>
+        </div>
+    </header>
+
+    <div class="row g-4 mb-4">
+        <div class="col-md-3">
+            <div class="card p-3 border-0 shadow-sm" style="border-left: 4px solid var(--color-primary) !important;">
+                <p class="x-small text-muted mb-1 fw-bold">TOTAL PENDING</p>
+                <h3 class="mb-0">124</h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3 border-0 shadow-sm" style="border-left: 4px solid var(--color-tertiary) !important;">
+                <p class="x-small text-muted mb-1 fw-bold">REQUIRES INFO</p>
+                <h3 class="mb-0">12</h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3 border-0 shadow-sm" style="border-left: 4px solid var(--color-secondary) !important;">
+                <p class="x-small text-muted mb-1 fw-bold">APPROVED TODAY</p>
+                <h3 class="mb-0">45</h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3 border-0 shadow-sm" style="border-left: 4px solid var(--color-error) !important;">
+                <p class="x-small text-muted mb-1 fw-bold">REJECTED</p>
+                <h3 class="mb-0">8</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="card p-0 overflow-hidden border-0 shadow-sm">
+        <div class="p-4 bg-white border-bottom d-flex justify-content-between align-items-center">
+            <div class="input-group w-50">
+                <span class="input-group-text bg-transparent border-end-0"><i class="fa-solid fa-search text-muted"></i></span>
+                <input type="text" class="form-control border-start-0" placeholder="Search applicant, country, or ID...">
+            </div>
+            <div class="d-flex gap-2">
+                <select class="form-select form-select-sm" style="width: 150px;">
+                    <option>All Statuses</option>
+                    <option>Pending</option>
+                    <option>Under Review</option>
+                    <option>Approved</option>
+                </select>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead class="bg-surface-low">
+                    <tr>
+                        <th class="ps-4 py-3 x-small fw-bold text-muted">APPLICANT</th>
+                        <th class="py-3 x-small fw-bold text-muted">ID</th>
+                        <th class="py-3 x-small fw-bold text-muted">COUNTRY</th>
+                        <th class="py-3 x-small fw-bold text-muted">TYPE</th>
+                        <th class="py-3 x-small fw-bold text-muted">DATE</th>
+                        <th class="py-3 x-small fw-bold text-muted">STATUS</th>
+                        <th class="pe-4 py-3 x-small fw-bold text-muted text-end">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ps-4">
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--surface-container); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.75rem;">AO</div>
+                                <span class="fw-bold small">Amina Okafor</span>
+                            </div>
+                        </td>
+                        <td><span class="text-primary fw-bold x-small">LTK-2026-00001</span></td>
+                        <td><span class="small">Nigeria 🇳🇬</span></td>
+                        <td><div class="d-flex gap-1"><span class="badge badge-primary">Visa</span><span class="badge badge-primary">Job</span></div></td>
+                        <td><span class="small text-muted">01 May 2026</span></td>
+                        <td><span class="badge badge-warning">Under Review</span></td>
+                        <td class="pe-4 text-end"><button class="btn btn-primary btn-sm px-3" onclick="openReview()">Review</button></td>
+                    </tr>
+                    <tr>
+                        <td class="ps-4">
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--surface-container); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.75rem;">JD</div>
+                                <span class="fw-bold small">John Doe</span>
+                            </div>
+                        </td>
+                        <td><span class="text-primary fw-bold x-small">LTK-2026-00003</span></td>
+                        <td><span class="small">Ghana 🇬🇭</span></td>
+                        <td><span class="badge badge-primary">Education</span></td>
+                        <td><span class="small text-muted">03 May 2026</span></td>
+                        <td><span class="badge badge-primary">Submitted</span></td>
+                        <td class="pe-4 text-end"><button class="btn btn-primary btn-sm px-3">Review</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<!-- Review Side Panel -->
+<div id="reviewPanel" class="d-none position-fixed top-0 end-0 h-100 bg-white shadow-lg" style="width: 480px; z-index: var(--z-sidebar); overflow-y: auto;">
+    <div class="p-4 border-bottom d-flex justify-content-between align-items-center">
+        <h5 class="fw-bold mb-0">Review Application</h5>
+        <button class="btn btn-link text-muted p-0" onclick="closeReview()"><i class="fa-solid fa-xmark fa-lg"></i></button>
+    </div>
+    <div class="p-4">
+        <div class="d-flex align-items-center gap-4 mb-5">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem;">AO</div>
+            <div>
+                <h4 class="fw-bold mb-1">Amina Okafor</h4>
+                <p class="text-muted small mb-0">amina@example.com · +234 801 234 5678</p>
+            </div>
+        </div>
+
+        <div class="card p-3 mb-4 bg-surface-low border-0">
+            <h6 class="x-small fw-bold text-muted text-uppercase mb-3">Application Details</h6>
+            <div class="d-flex justify-content-between mb-2">
+                <span class="small text-muted">ID:</span>
+                <span class="small fw-bold">LTK-2026-00001</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+                <span class="small text-muted">Type:</span>
+                <span class="small fw-bold">Visa + Job Sponsorship</span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span class="small text-muted">Destination:</span>
+                <span class="small fw-bold">United Kingdom 🇬🇧</span>
+            </div>
+        </div>
+
+        <h6 class="x-small fw-bold text-muted text-uppercase mb-3">Submitted Documents</h6>
+        <div class="d-flex flex-column gap-2 mb-5">
+            <div class="card p-2 shadow-none d-flex flex-row align-items-center gap-3">
+                <i class="fa-solid fa-file-pdf text-danger fa-lg"></i>
+                <div class="flex-grow-1">
+                    <p class="small fw-bold mb-0">Passport_Amina.pdf</p>
+                    <p class="x-small text-muted mb-0">2.4 MB · Verified</p>
+                </div>
+                <button class="btn btn-secondary btn-sm p-2"><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <div class="card p-2 shadow-none d-flex flex-row align-items-center gap-3">
+                <i class="fa-solid fa-file-pdf text-danger fa-lg"></i>
+                <div class="flex-grow-1">
+                    <p class="small fw-bold mb-0">IELTS_Result.pdf</p>
+                    <p class="x-small text-muted mb-0">1.1 MB · Verified</p>
+                </div>
+                <button class="btn btn-secondary btn-sm p-2"><i class="fa-solid fa-eye"></i></button>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <label class="form-label small fw-bold">Admin Notes</label>
+            <textarea class="form-control" rows="3" placeholder="Add internal review notes..."></textarea>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary py-3" onclick="adminAction('approved')"><i class="fa-solid fa-check-circle me-2"></i> Approve Application</button>
+            <button class="btn btn-secondary py-3" onclick="adminAction('more_info')"><i class="fa-solid fa-circle-info me-2"></i> Request More Info</button>
+            <button class="btn btn-link text-danger small py-2" onclick="adminAction('rejected')">Reject Application</button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/main.js"></script>
+<script>
+function openReview() {
+    document.getElementById('reviewPanel').classList.remove('d-none');
+}
+function closeReview() {
+    document.getElementById('reviewPanel').classList.add('d-none');
+}
+function adminAction(status) {
+    Utils.showToast(`Application ${status}!`);
+    closeReview();
+}
+</script>
+</body>
+</html>

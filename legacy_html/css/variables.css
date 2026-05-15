@@ -1,0 +1,134 @@
+﻿/* ═══════════════════════════════════════════════════════
+   LOTOKS — Vibrant Professionalism Design System
+   Brand: Electric Blue · Sky Blue · Pink Magenta
+   Typography: Lexend (headings) · Inter (body)
+═══════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Brand Colors ────────────────────────────────── */
+  --color-primary:          #2349e1;
+  --color-primary-dim:      #0a3ad6;
+  --color-primary-light:    #869aff;
+  --color-primary-fixed:    #748bff;
+  --on-primary:             #f2f1ff;
+  --primary-container:      #869aff;
+  --on-primary-container:   #00176b;
+  --inverse-primary:        #7087ff;
+
+  --color-secondary:        #006382;
+  --color-secondary-dim:    #005672;
+  --secondary-container:    #93dbff;
+  --on-secondary:           #e6f5ff;
+  --on-secondary-container: #004d67;
+
+  --color-tertiary:         #ab1c6b;
+  --color-tertiary-dim:     #9b065f;
+  --tertiary-container:     #ff8cbe;
+  --on-tertiary:            #ffeff2;
+  --on-tertiary-container:  #64003b;
+
+  --color-error:            #b41340;
+  --color-error-dim:        #a70138;
+  --error-container:        #f74b6d;
+  --on-error:               #ffefef;
+
+  /* ── Surfaces ────────────────────────────────────── */
+  --color-background:        #f7f5ff;
+  --color-surface:           #f7f5ff;
+  --surface-dim:             #d1d2ec;
+  --surface-bright:          #f7f5ff;
+  --surface-lowest:          #ffffff;
+  --surface-low:             #f0efff;
+  --surface-container:       #e6e6fc;
+  --surface-high:            #e0e1f7;
+  --surface-highest:         #dadbf3;
+  --surface-variant:         #dadbf3;
+  --color-surface-tint:      #2349e1;
+  --on-surface:              #2c2e3b;
+  --on-surface-variant:      #595a69;
+  --inverse-surface:         #0c0d19;
+  --inverse-on-surface:      #9b9cac;
+
+  /* ── Outline / Borders ───────────────────────────── */
+  --outline:                 #757685;
+  --outline-variant:         #acacbd;
+
+  /* ── Semantic Aliases (backward compat) ─────────── */
+  --color-teal:              var(--color-secondary);
+  --color-teal-light:        rgba(0,99,130,0.08);
+  --color-red:               var(--color-error);
+  --color-white:             #ffffff;
+  --neutral-50:              var(--surface-low);
+  --neutral-100:             var(--surface-container);
+  --neutral-200:             var(--surface-highest);
+  --neutral-300:             var(--outline-variant);
+  --neutral-400:             var(--outline);
+  --neutral-500:             var(--on-surface-variant);
+  --neutral-600:             #404152;
+  --neutral-700:             #31323e;
+
+  /* ── Typography ──────────────────────────────────── */
+  --font-heading:   'Lexend', sans-serif;
+  --font-body:      'Inter', sans-serif;
+  --fw-regular:     400;
+  --fw-medium:      500;
+  --fw-semibold:    600;
+  --fw-bold:        700;
+  --fw-extrabold:   800;
+
+  /* Type scale */
+  --text-h1:    clamp(2rem, 5vw, 3rem);
+  --text-h2:    clamp(1.5rem, 3.5vw, 2.25rem);
+  --text-h3:    1.5rem;
+  --text-body-lg:  1.125rem;
+  --text-body-md:  1rem;
+  --text-body-sm:  0.875rem;
+  --text-label:    0.75rem;
+  --lh-h1:      1.17;
+  --lh-h2:      1.22;
+  --lh-h3:      1.33;
+  --lh-body:    1.6;
+
+  /* ── Spacing (4px base) ──────────────────────────── */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   32px;
+  --space-2xl:  48px;
+  --space-3xl:  64px;
+
+  /* ── Border Radius (pill-shaped language) ────────── */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   16px;   /* 1rem – cards, modals */
+  --radius-lg:   24px;   /* 1.5rem */
+  --radius-xl:   32px;   /* 2rem – large cards */
+  --radius-2xl:  48px;   /* 3rem – icon enclosures */
+  --radius-full: 9999px; /* pills */
+
+  /* ── Shadows (tinted with primary blue) ──────────── */
+  --shadow-sm:   0 1px 3px rgba(35,73,225,0.06), 0 1px 2px rgba(35,73,225,0.04);
+  --shadow-md:   0 4px 16px rgba(35,73,225,0.10), 0 2px 6px rgba(35,73,225,0.06);
+  --shadow-lg:   0 12px 40px rgba(35,73,225,0.13), 0 4px 16px rgba(35,73,225,0.08);
+  --shadow-xl:   0 24px 64px rgba(35,73,225,0.16), 0 8px 24px rgba(35,73,225,0.10);
+  --shadow-focus: 0 0 0 3px rgba(35,73,225,0.20);
+
+  /* ── Motion ──────────────────────────────────────── */
+  --transition-fast:  150ms ease;
+  --transition-base:  250ms ease;
+  --transition-slow:  400ms ease;
+
+  /* ── Layout ──────────────────────────────────────── */
+  --sidebar-width:  256px;
+  --container-max:  1280px;
+  --gutter:         24px;
+
+  /* ── Z-Index ─────────────────────────────────────── */
+  --z-dropdown:  100;
+  --z-header:    200;
+  --z-sidebar:   300;
+  --z-modal:     400;
+  --z-toast:     500;
+}

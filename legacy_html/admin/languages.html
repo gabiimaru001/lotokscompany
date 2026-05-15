@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Management — Lotoks Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="bg-surface-low">
+
+<aside class="sidebar" id="sidebar">
+    <div class="mb-5">
+        <a class="navbar-brand text-white fs-3" href="../index.html">Lotoks<span class="text-tertiary">.</span></a>
+        <div class="badge badge-warning x-small d-block mt-2">Admin Portal</div>
+    </div>
+    <nav class="d-flex flex-column gap-2">
+        <a href="queue.html" class="sidebar-link"><i class="fa-solid fa-list-check"></i> Queue</a>
+        <a href="listings.html" class="sidebar-link"><i class="fa-solid fa-briefcase"></i> Listings</a>
+        <a href="payments.html" class="sidebar-link"><i class="fa-solid fa-credit-card"></i> Payments</a>
+        <a href="staff.html" class="sidebar-link"><i class="fa-solid fa-users"></i> Staff</a>
+        <a href="config.html" class="sidebar-link mt-auto"><i class="fa-solid fa-gear"></i> System Config</a>
+        <a href="languages.html" class="sidebar-link active"><i class="fa-solid fa-language"></i> i18n</a>
+        <a href="../index.html" class="sidebar-link border-0 bg-transparent text-start w-100"><i class="fa-solid fa-sign-out"></i> Logout</a>
+    </nav>
+</aside>
+
+<main class="main-content">
+    <header class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h2 class="mb-1">Language Management</h2>
+            <p class="text-muted small">Manage translations and localization for all supported regions.</p>
+        </div>
+        <div class="d-flex gap-2">
+            <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-upload me-1"></i> Import JSON</button>
+            <button class="btn btn-primary btn-sm" onclick="Utils.showToast('Changes saved!')"><i class="fa-solid fa-save me-1"></i> Save Changes</button>
+        </div>
+    </header>
+
+    <div class="card p-0 border-0 shadow-sm overflow-hidden">
+        <div class="p-4 bg-white border-bottom d-flex gap-3">
+            <button class="btn btn-primary btn-sm px-4">English</button>
+            <button class="btn btn-secondary btn-sm px-4">Français</button>
+            <button class="btn btn-secondary btn-sm px-4">العربية</button>
+            <button class="btn btn-secondary btn-sm px-4">Yorùbá</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table mb-0">
+                <thead class="bg-surface-low">
+                    <tr>
+                        <th class="ps-4 py-3 x-small fw-bold text-muted">KEY</th>
+                        <th class="py-3 x-small fw-bold text-muted">SOURCE (EN)</th>
+                        <th class="py-3 x-small fw-bold text-muted">TRANSLATION</th>
+                        <th class="pe-4 py-3 x-small fw-bold text-muted text-end">STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ps-4"><code class="x-small">hero.title</code></td>
+                        <td><span class="small">Your global sponsorship journey starts here.</span></td>
+                        <td><input type="text" class="form-control form-control-sm" value="Your global sponsorship journey starts here."></td>
+                        <td class="pe-4 text-end"><span class="badge badge-success">Done</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ps-4"><code class="x-small">apply.btn</code></td>
+                        <td><span class="small">Start Application</span></td>
+                        <td><input type="text" class="form-control form-control-sm" value="Start Application"></td>
+                        <td class="pe-4 text-end"><span class="badge badge-success">Done</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
