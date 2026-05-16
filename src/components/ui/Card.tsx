@@ -244,5 +244,4 @@ export function Card({
   }
 }
 
-// Export individual components for specific use cases
-export { GlassCard, ElevatedCard, ImageCard, StatCard, ProcessStepCard };
+// Components exported above - no duplicate export needed
