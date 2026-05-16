@@ -244,4 +244,4 @@ export function Card({
   }
 }
 
-// Components exported above - no duplicate export needed
+// Fixed - no duplicate exports
