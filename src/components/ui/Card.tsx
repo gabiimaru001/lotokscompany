@@ -243,5 +243,3 @@ export function Card({
       return <GlassCard variant="glass" hoverable={hoverable} className={className} {...props}>{children}</GlassCard>;
   }
 }
-
-// Fixed - no duplicate exports
